@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+
 import { Send, CheckCircle, AlertCircle } from 'lucide-react';
 import api from '../api/axios';
 
@@ -34,10 +34,7 @@ const PublicContact = () => {
             <div className="absolute top-0 left-0 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
 
-            <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
+            <div
                 className="w-full max-w-lg bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-3xl shadow-2xl relative z-10"
             >
                 <div className="text-center mb-8">
@@ -112,7 +109,7 @@ const PublicContact = () => {
                         <a href="/login" className="text-sm text-gray-500 hover:text-blue-400 transition-colors">Admin Login</a>
                     </div>
                 </form>
-            </motion.div>
+            </div>
         </div>
     );
 };

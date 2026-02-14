@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+
 
 const Login = () => {
     const { login } = useAuth();
@@ -21,9 +21,7 @@ const Login = () => {
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 p-4">
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+            <div
                 className="w-full max-w-md bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden border border-gray-200 dark:border-gray-700"
             >
                 <div className="p-8">
@@ -76,7 +74,7 @@ const Login = () => {
                         Default: admin@example.com / password123
                     </p>
                 </div>
-            </motion.div>
+            </div>
         </div>
     );
 };

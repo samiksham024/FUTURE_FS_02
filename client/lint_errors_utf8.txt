@@ -1,0 +1,104 @@
+﻿
+> client@0.0.0 lint
+> eslint .
+
+
+C:\Users\SANKEERTH M\Desktop\crm webapp\client\src\components\KanbanBoard.jsx
+   3:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          no-unused-vars
+  21:9   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  19 |             'Lost': leads.filter(l => l.status === 'Lost'),
+  20 |         };
+> 21 |         setColumns(newColumns);
+     |         ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  22 |     }, [leads]);
+  23 |
+  24 |     const onDragEnd = (result) => {  react-hooks/set-state-in-effect
+
+C:\Users\SANKEERTH M\Desktop\crm webapp\client\src\components\LeadModal.jsx
+  3:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\SANKEERTH M\Desktop\crm webapp\client\src\components\LeadTable.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\SANKEERTH M\Desktop\crm webapp\client\src\components\Navbar.jsx
+  4:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\SANKEERTH M\Desktop\crm webapp\client\src\components\Sidebar.jsx
+   1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  13:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u    no-unused-vars
+
+C:\Users\SANKEERTH M\Desktop\crm webapp\client\src\components\StatCard.jsx
+  1:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  3:41  error  'Icon' is defined but never used                                               no-unused-vars
+
+C:\Users\SANKEERTH M\Desktop\crm webapp\client\src\components\TodoList.jsx
+  3:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\SANKEERTH M\Desktop\crm webapp\client\src\context\AuthContext.jsx
+  6:14  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+C:\Users\SANKEERTH M\Desktop\crm webapp\client\src\layouts\DashboardLayout.jsx
+  12:13  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  10 |     useEffect(() => {
+  11 |         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+> 12 |             setIsDark(true);
+     |             ^^^^^^^^^ Avoid calling setState() directly within an effect
+  13 |             document.documentElement.classList.add('dark');
+  14 |         } else {
+  15 |             setIsDark(false);  react-hooks/set-state-in-effect
+
+C:\Users\SANKEERTH M\Desktop\crm webapp\client\src\pages\Leads.jsx
+  25:9  error  Error: Cannot access variable before it is declared
+
+`fetchLeads` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+  23 |
+  24 |     useEffect(() => {
+> 25 |         fetchLeads();
+     |         ^^^^^^^^^^ `fetchLeads` accessed before it is declared
+  26 |     }, []);
+  27 |
+  28 |     const fetchLeads = async () => {
+
+  26 |     }, []);
+  27 |
+> 28 |     const fetchLeads = async () => {
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 29 |         try {
+     | ^^^^^^^^^^^^^
+> 30 |             const res = await api.get('/leads');
+     ΓÇª
+     | ^^^^^^^^^^^^^
+> 37 |         }
+     | ^^^^^^^^^^^^^
+> 38 |     };
+     | ^^^^^^^ `fetchLeads` is declared here
+  39 |
+  40 |     const handleCreate = async (data) => {
+  41 |         try {  react-hooks/immutability
+
+C:\Users\SANKEERTH M\Desktop\crm webapp\client\src\pages\Login.jsx
+  4:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\SANKEERTH M\Desktop\crm webapp\client\src\pages\PublicContact.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\SANKEERTH M\Desktop\crm webapp\client\src\pages\Settings.jsx
+  4:8  error  'api' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+Γ£û 16 problems (16 errors, 0 warnings)
+

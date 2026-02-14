@@ -1,9 +1,8 @@
-import { motion } from 'framer-motion';
 
+// eslint-disable-next-line no-unused-vars
 const StatCard = ({ title, value, icon: Icon, color, trend }) => {
     return (
-        <motion.div
-            whileHover={{ y: -5 }}
+        <div
             className="group p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-all"
         >
             <div className="flex justify-between items-start">
@@ -22,7 +21,7 @@ const StatCard = ({ title, value, icon: Icon, color, trend }) => {
                     <Icon size={24} />
                 </div>
             </div>
-        </motion.div>
+        </div>
     );
 };
 

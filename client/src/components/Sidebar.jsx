@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import {
     LayoutDashboard,
@@ -10,7 +9,7 @@ import {
     Moon
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 
 const Sidebar = ({ isOpen, onClose }) => {
     const { logout } = useAuth();
@@ -20,9 +19,8 @@ const Sidebar = ({ isOpen, onClose }) => {
 
     return (
         <AnimatePresence>
-            <motion.div
+            <div
                 className={`fixed inset-y-0 left-0 z-50 w-64 glass border-r bg-white/80 dark:bg-gray-900/80 transform lg:translate-x-0 lg:static lg:block ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out`}
-                initial={false}
             >
                 <div className="flex items-center justify-between h-16 px-6 border-b border-gray-200 dark:border-gray-800">
                     <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">NexusCRM</span>
@@ -64,7 +62,7 @@ const Sidebar = ({ isOpen, onClose }) => {
                         Logout
                     </button>
                 </div>
-            </motion.div>
+            </div>
         </AnimatePresence>
     );
 };

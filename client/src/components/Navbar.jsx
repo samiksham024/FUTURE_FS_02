@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Menu, Sun, Moon, Bell, Check, X } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 
 const Navbar = ({ toggleSidebar, isDark, toggleTheme }) => {
     const { user } = useAuth();
@@ -73,10 +73,7 @@ const Navbar = ({ toggleSidebar, isDark, toggleTheme }) => {
 
                     <AnimatePresence>
                         {showNotifications && (
-                            <motion.div
-                                initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                                animate={{ opacity: 1, y: 0, scale: 1 }}
-                                exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                            <div
                                 className="absolute right-0 mt-2 w-80 bg-white dark:bg-gray-900 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden z-50"
                             >
                                 <div className="p-4 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center bg-gray-50 dark:bg-gray-800/50">
@@ -122,7 +119,7 @@ const Navbar = ({ toggleSidebar, isDark, toggleTheme }) => {
                                         </div>
                                     )}
                                 </div>
-                            </motion.div>
+                            </div>
                         )}
                     </AnimatePresence>
                 </div>

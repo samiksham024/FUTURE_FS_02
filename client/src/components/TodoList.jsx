@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Check, Plus, Trash2, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 
 const TodoList = () => {
     const [todos, setTodos] = useState(() => {
@@ -62,19 +62,16 @@ const TodoList = () => {
                         <div className="text-center text-gray-400 py-8 text-sm">No tasks yet. Enjoy your day!</div>
                     ) : (
                         todos.map(todo => (
-                            <motion.div
+                            <div
                                 key={todo.id}
-                                initial={{ opacity: 0, height: 0 }}
-                                animate={{ opacity: 1, height: 'auto' }}
-                                exit={{ opacity: 0, height: 0 }}
                                 className="group flex items-center justify-between p-2 hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-lg transition-colors"
                             >
                                 <div className="flex items-center gap-3 overflow-hidden">
                                     <button
                                         onClick={() => toggleTodo(todo.id)}
                                         className={`flex-shrink-0 w-5 h-5 rounded border flex items-center justify-center transition-colors ${todo.completed
-                                                ? 'bg-green-500 border-green-500 text-white'
-                                                : 'border-gray-300 dark:border-gray-600 hover:border-blue-500'
+                                            ? 'bg-green-500 border-green-500 text-white'
+                                            : 'border-gray-300 dark:border-gray-600 hover:border-blue-500'
                                             }`}
                                     >
                                         {todo.completed && <Check size={12} />}
@@ -89,7 +86,7 @@ const TodoList = () => {
                                 >
                                     <Trash2 size={14} />
                                 </button>
-                            </motion.div>
+                            </div>
                         ))
                     )}
                 </AnimatePresence>

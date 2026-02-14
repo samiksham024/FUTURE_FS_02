@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { User, Lock, Save } from 'lucide-react';
-import api from '../api/axios';
+
 import toast from 'react-hot-toast';
 
 const Settings = () => {

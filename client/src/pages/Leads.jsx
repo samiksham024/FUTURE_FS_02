@@ -21,10 +21,6 @@ const Leads = () => {
     const [statusFilter, setStatusFilter] = useState(location.state?.status || 'All');
     const [viewMode, setViewMode] = useState('table'); // 'table' or 'kanban'
 
-    useEffect(() => {
-        fetchLeads();
-    }, []);
-
     const fetchLeads = async () => {
         try {
             const res = await api.get('/leads');
@@ -36,6 +32,13 @@ const Leads = () => {
             setLoading(false);
         }
     };
+
+    useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        fetchLeads();
+    }, []);
+
+
 
     const handleCreate = async (data) => {
         try {

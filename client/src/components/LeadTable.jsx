@@ -1,5 +1,5 @@
 import { Edit, Trash2, Phone, Mail, MoreVertical, Star, Trophy } from 'lucide-react';
-import { motion } from 'framer-motion';
+
 
 const LeadTable = ({ leads, onEdit, onDelete, onStar }) => {
     const getStatusColor = (status) => {
@@ -35,11 +35,8 @@ const LeadTable = ({ leads, onEdit, onDelete, onStar }) => {
                 </thead>
                 <tbody className="divide-y divide-gray-100 dark:divide-gray-700">
                     {leads.map((lead) => (
-                        <motion.tr
+                        <tr
                             key={lead._id}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
                             className="hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors"
                         >
                             <td className="px-6 py-4">
@@ -98,7 +95,7 @@ const LeadTable = ({ leads, onEdit, onDelete, onStar }) => {
                                     </button>
                                 </div>
                             </td>
-                        </motion.tr>
+                        </tr>
                     ))}
                     {leads.length === 0 && (
                         <tr>

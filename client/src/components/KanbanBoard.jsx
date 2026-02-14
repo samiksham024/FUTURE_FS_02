@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
-import { motion } from 'framer-motion';
 import { MoreVertical, Phone, Mail, Clock } from 'lucide-react';
 
 const KanbanBoard = ({ leads, onStatusChange, onEdit }) => {
@@ -18,7 +17,12 @@ const KanbanBoard = ({ leads, onStatusChange, onEdit }) => {
             'Converted': leads.filter(l => l.status === 'Converted'),
             'Lost': leads.filter(l => l.status === 'Lost'),
         };
-        setColumns(newColumns);
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setColumns(prev => {
+            // Only update if actually different to avoid cycles/renders if referentially unstable
+            if (JSON.stringify(prev) === JSON.stringify(newColumns)) return prev;
+            return newColumns;
+        });
     }, [leads]);
 
     const onDragEnd = (result) => {
@@ -98,8 +102,7 @@ const KanbanBoard = ({ leads, onStatusChange, onEdit }) => {
                                                     className="group cursor-grab active:cursor-grabbing"
                                                     style={{ ...provided.draggableProps.style }}
                                                 >
-                                                    <motion.div
-                                                        layoutId={lead._id}
+                                                    <div
                                                         className={`bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow relative ${snapshot.isDragging ? 'shadow-xl rotate-2 ring-2 ring-blue-500/50' : ''}`}
                                                     >
                                                         <div className="flex justify-between items-start mb-2">
@@ -125,7 +128,7 @@ const KanbanBoard = ({ leads, onStatusChange, onEdit }) => {
                                                                 <span>{new Date(lead.createdAt).toLocaleDateString()}</span>
                                                             </div>
                                                         </div>
-                                                    </motion.div>
+                                                    </div>
                                                 </div>
                                             )}
                                         </Draggable>
