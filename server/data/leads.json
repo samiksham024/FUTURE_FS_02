@@ -1,0 +1,135 @@
+[
+  {
+    "_id": "45ri56sgw",
+    "name": "Test Lead",
+    "email": "test@example.com",
+    "source": "LinkedIn",
+    "status": "Converted",
+    "createdAt": "2026-01-15T07:04:11.880Z",
+    "history": [
+      {
+        "text": "Lead Created",
+        "date": "2026-01-15T07:04:11.880Z"
+      }
+    ],
+    "score": 70,
+    "isStarred": true
+  },
+  {
+    "_id": "d46f6qsby",
+    "name": "savi",
+    "email": "abcsavi@gmail.com",
+    "phone": "1235679081",
+    "source": "Website Form",
+    "status": "Lost",
+    "notes": "its lost",
+    "createdAt": "2026-01-15T06:07:58.918Z",
+    "history": [
+      {
+        "text": "Lead created from Website Form",
+        "date": "2026-01-15T06:07:58.918Z"
+      }
+    ]
+  },
+  {
+    "_id": "bu42out5t",
+    "name": "Browser Test",
+    "email": "browser@test.com",
+    "phone": "1234567654",
+    "source": "Website Form",
+    "status": "Converted",
+    "notes": "fcfc",
+    "createdAt": "2026-01-13T15:05:37.149Z",
+    "history": [
+      {
+        "text": "Lead created from Website Form",
+        "date": "2026-01-13T15:05:37.149Z"
+      },
+      {
+        "text": "Status changed from Contacted to Converted",
+        "date": "2026-01-13T15:06:15.013Z"
+      }
+    ],
+    "lastContacted": 1768316775013
+  },
+  {
+    "_id": "0mfl0dta6",
+    "name": "Samiksha M",
+    "email": "samiksham024@gmail.com",
+    "phone": "gvghvccfc",
+    "source": "Public Contact Form",
+    "status": "New",
+    "notes": "hiii",
+    "createdAt": "2026-01-13T15:00:53.653Z",
+    "history": [
+      {
+        "text": "Lead created from Public Contact Form",
+        "date": "2026-01-13T15:00:53.652Z"
+      }
+    ]
+  },
+  {
+    "_id": "ask1fedgl",
+    "name": "Samiksha M",
+    "email": "samiksham024@gmail.com",
+    "phone": "1234567854",
+    "source": "Public Contact Form",
+    "status": "New",
+    "notes": "tftfrttrxrxrf",
+    "createdAt": "2026-01-13T14:58:59.482Z",
+    "history": [
+      {
+        "text": "Lead created from Public Contact Form",
+        "date": "2026-01-13T14:58:59.482Z"
+      }
+    ]
+  },
+  {
+    "_id": "pb4qs0rvt",
+    "name": "sanky",
+    "email": "sankeerthm2020@gmail.com",
+    "phone": "1234567895",
+    "source": "Public Contact Form",
+    "status": "New",
+    "notes": "fgtdtrstrdgtftgc",
+    "createdAt": "2026-01-13T14:53:53.812Z",
+    "history": [
+      {
+        "text": "Lead created from Public Contact Form",
+        "date": "2026-01-13T14:53:53.812Z"
+      }
+    ]
+  },
+  {
+    "_id": "t9q04arwy",
+    "name": "Samiksha M",
+    "email": "samiksham024@gmail.com",
+    "phone": "8088381277",
+    "source": "Public Contact Form",
+    "status": "New",
+    "notes": "hiii",
+    "createdAt": "2026-01-13T14:52:08.270Z",
+    "history": [
+      {
+        "text": "Lead created from Public Contact Form",
+        "date": "2026-01-13T14:52:08.270Z"
+      }
+    ]
+  },
+  {
+    "_id": "u9b74z3ru",
+    "name": "Samiksha M",
+    "email": "samiksham024@gmail.com",
+    "phone": "8088381277",
+    "source": "Website Form",
+    "status": "Contacted",
+    "notes": "drtdxred",
+    "createdAt": "2026-01-13T14:43:39.838Z",
+    "history": [
+      {
+        "text": "Lead created from Website Form",
+        "date": "2026-01-13T14:43:39.838Z"
+      }
+    ]
+  }
+]
