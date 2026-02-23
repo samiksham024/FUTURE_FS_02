@@ -1,4 +1,4 @@
-
+// StatCard component for dashboard metrics
 // eslint-disable-next-line no-unused-vars
 const StatCard = ({ title, value, icon: Icon, color, trend }) => {
     return (

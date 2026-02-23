@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require('express'); // Express server entry point
 const connectDB = require('./config/db');
 const path = require('path');
 const cors = require('cors');
