@@ -23,7 +23,11 @@ app.use('/api/leads', require('./routes/leads'));
 
 // Health Check / Root route
 app.get('/', (req, res) => {
-    res.json({ message: 'CRM API is running...' });
+    res.json({
+        status: 'online',
+        database: global.hasMongoDB ? 'Connected (MongoDB)' : 'Connected (Warning: Local Mock Mode)',
+        time: new Date()
+    });
 });
 
 // Serve static assets in production (optional placeholder)
