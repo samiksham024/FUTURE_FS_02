@@ -1,7 +1,9 @@
 {
     "version": 2,
     "functions": {
-        "server/index.js": {}
+        "server/index.js": {
+            "maxDuration": 10
+        }
     },
     "rewrites": [
         {
