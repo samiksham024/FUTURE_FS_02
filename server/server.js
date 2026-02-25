@@ -21,6 +21,11 @@ app.use(morgan('dev'));
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/leads', require('./routes/leads'));
 
+// Health Check / Root route
+app.get('/', (req, res) => {
+    res.json({ message: 'CRM API is running...' });
+});
+
 // Serve static assets in production (optional placeholder)
 if (process.env.NODE_ENV === 'production') {
     // Set static folder
@@ -31,9 +36,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 
-if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL) {
-    const PORT = process.env.PORT || 5000;
-    app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
-}
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, '0.0.0.0', () => console.log(`Server started on port ${PORT}`));
 
 module.exports = app;
