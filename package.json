@@ -5,7 +5,7 @@
     "scripts": {
         "install-all": "npm install --prefix client && npm install --prefix server",
         "render-build": "npm install --prefix server",
-        "build": "npm run build --prefix client",
+        "build": "npm run render-build",
         "start": "npm start --prefix server",
         "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\""
     },
